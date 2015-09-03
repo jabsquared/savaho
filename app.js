@@ -8,7 +8,7 @@ var app = express();
 var server = http.createServer(app);
 var io = require('socket.io').listen(server);
 
-app.set('port', process.env.VCAP_APP_PORT || 3000);
+app.set('port', (process.env.PORT || 5000));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(express.favicon());
@@ -36,6 +36,6 @@ app.post('/vote', routes.vote);
 
 io.sockets.on('connection', routes.vote);
 
-app.listen(process.env.PORT || 3000, function(){
-  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
 });
