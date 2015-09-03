@@ -1,7 +1,7 @@
 {
-	"name": "NodejsStarterApp",
+	"name": "Reina",
 	"version": "0.0.1",
-	"description": "A sample nodejs app for Bluemix",
+	"description": "App to vote for gal",
 	"scripts": {
 		"start": "node app.js"
 	},
@@ -12,5 +12,5 @@
 	"repository": {},
 	"engines": {
 		"node": "0.12.x"
-	} 
+	}
 }
