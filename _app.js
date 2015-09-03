@@ -1,7 +1,7 @@
 /*jshint node:true*/
 var express = require('express');
 var routes = require('./routes');
-var logger = require('morgan'); 
+var logger = require('morgan');
 var http = require('http');
 var path = require('path');
 var favicon = require('serve-favicon');
