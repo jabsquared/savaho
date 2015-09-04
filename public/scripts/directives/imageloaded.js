@@ -11,7 +11,7 @@
  *
  */
 
-angular.module('akoenig.deckgrid.demo').directive('imageloaded', [
+angular.module('reina').directive('imageloaded', [
 
     function () {
 
@@ -20,13 +20,13 @@ angular.module('akoenig.deckgrid.demo').directive('imageloaded', [
         return {
             restrict: 'A',
 
-            link: function(scope, element, attrs) {   
+            link: function(scope, element, attrs) {
                 var cssClass = attrs.loadedclass;
 
                 element.bind('load', function (e) {
                     angular.element(element).addClass(cssClass);
                 });
             }
-        }
+        };
     }
 ]);

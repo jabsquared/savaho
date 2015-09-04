@@ -1,22 +1,20 @@
 /*
- * angular-deckgrid-demo
- *
- * Copyright(c) 2013 André König <akoenig@posteo.de>
- * MIT Licensed
- *
+ * Reina by jabSquared
+ * Plugin: angular-deckgrid by André König <akoenig@posteo.de>
+ **
  */
 
 /**
- * @author André König (andre.koenig@posteo.de)
+ * @author jabSquared (jabsquared@tuta.io)
  *
  */
 
-angular.module('akoenig.deckgrid.demo', [
+angular.module('reina', [
   'ngRoute',
   'akoenig.deckgrid'
 ]);
 
-angular.module('akoenig.deckgrid.demo').config([
+angular.module('reina').config([
 
   '$routeProvider',
 
