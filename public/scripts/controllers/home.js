@@ -12,10 +12,21 @@
 angular.module('reina').controller('HomeController', [
 
   '$scope',
+  '$http',
 
-  function initialize($scope) {
-
+  function initialize($scope, $http) {
     'use strict';
+
+    var vote = function(id) {
+      $http.get('http://reina.mybluemix.net/vote/' + id).
+      then(function(response) {
+        // this callback will be called asynchronously
+        // when the response is available
+      }, function(response) {
+        // called asynchronously if an error occurs
+        // or server returns response with an error status.
+      });
+    };
 
     $scope.gals = [{
       id: 'photo-1',
@@ -58,7 +69,8 @@ angular.module('reina').controller('HomeController', [
       name: 'Dynamic gal',
       src: 'http://lorempixel.com/420/300/abstract'
     }];
-
-  }
-
+    for (var i = 0; i < $scope.gals.length; i++) {
+      $scope.gals[i].vote = vote;
+    }
+  },
 ]);

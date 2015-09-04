@@ -12,21 +12,20 @@
  */
 
 angular.module('reina').directive('imageloaded', [
+  function() {
 
-    function () {
+    'use strict';
 
-        'use strict';
+    return {
+      restrict: 'A',
 
-        return {
-            restrict: 'A',
+      link: function(scope, element, attrs) {
+        var cssClass = attrs.loadedclass;
 
-            link: function(scope, element, attrs) {
-                var cssClass = attrs.loadedclass;
-
-                element.bind('load', function (e) {
-                    angular.element(element).addClass(cssClass);
-                });
-            }
-        };
-    }
+        element.bind('load', function(e) {
+          angular.element(element).addClass(cssClass);
+        });
+      }
+    };
+  }
 ]);
