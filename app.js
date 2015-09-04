@@ -23,11 +23,13 @@ var appEnv = cfenv.getAppEnv();
 
 var services = JSON.parse(process.env.VCAP_SERVICES || "{}");
 
+var poll = require('./lab/poll');
 
 app.get('/vote/:hoid', function(req, res) {
   var hoid = req.params.hoid;
-  res.send(collection);
-  // res.send("Done!");
+  // res.send();
+  poll.vote(hoid);
+  res.send("Done! Voted for #" + hoid);
 });
 
 // start server on the specified port and binding host

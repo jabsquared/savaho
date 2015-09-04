@@ -8,7 +8,8 @@
   "dependencies": {
     "cfenv": "1.0.x",
     "express": "4.12.x",
-    "mongodb": "^2.0.42"
+    "mongodb": "^2.0.42",
+    "pouchdb": "^4.0.1"
   },
   "repository": {},
   "engines": {
