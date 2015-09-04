@@ -1,6 +1,6 @@
 applications:
 - services:
-  - MongoLab-w5
+  - Cloudant NoSQL DB-5s
   disk_quota: 1024M
   host: reina
   name: reina

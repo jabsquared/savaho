@@ -24,26 +24,10 @@ var appEnv = cfenv.getAppEnv();
 var services = JSON.parse(process.env.VCAP_SERVICES || "{}");
 
 
-var mongo = services.mongolab[0].credentials;
-
-var uri = mongo.uri;
-
-var MongoClient = require('mongodb').MongoClient;
-
-var collection = null;
-
-MongoClient.connect(uri, function(err, db) {
-  if (err) {
-    return console.dir(err);
-  }
-
-  collection = db.collection('vote');
-});
-
 app.get('/vote/:hoid', function(req, res) {
   var hoid = req.params.hoid;
-  collection.insert(ho_id);
-  res.send("Done!");
+  res.send(collection);
+  // res.send("Done!");
 });
 
 // start server on the specified port and binding host
